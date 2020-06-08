@@ -1,5 +1,4 @@
 const path = require('path')
-const packageConfig = require('../package.json')
 var glob = require("glob")
 
 exports.getEntry = function (globPath) {
@@ -28,17 +27,11 @@ exports.getEntryPages = function (pages) {
   var entries = {};
   for (var pathname in pages) {
     // 配置生成的html文件，定义路径等
-    let middlePath = pages[pathname].split('.html')[0]
-    // let mfilename = pathname.split("/")[1];
+    let middlePath = pages[pathname].split('.html')[0];
     var conf = {
       entry: middlePath + '.js',
-      // filename: pathname + '.html',
-      // filename: mfilename + '.html',
-      // hash: true,  // 哈希版本号
       template: pages[pathname],   // 模板路径
     };
-
-    // conf.chunks = [pathname];
     entries[pathname] = conf;
   }
   return entries;
