@@ -45,6 +45,8 @@ module.exports = {
   chainWebpack: config => {
     /**
      * 覆盖 Webpack 配置
+     * Vue Cli4 配置了 mini-css-extract-plugin 的 publicPath ，对相对路径进行了特定处理，但却没有考虑多层级页面的情况。
+     * 配置css中 图片资源路径也为 publicPath
      */
     const isProd = process.env.NODE_ENV === 'production';
     const extract = cssExtract || isProd;
