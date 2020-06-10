@@ -102,7 +102,7 @@ module.exports = {
   devServer: {
     host: '0.0.0.0',
     proxy: {
-      '/': {
+      '/ff': {
         target: 'http://www.baidu.com', //shopsystem
         logLevel: 'debug',  // 日志等级，默认可以不配置用于调试时打印一些代理信息
         // pathRewrite: {"^/api": ''},
